@@ -1,1 +1,1 @@
-game.splash(game.askForString("How are you going to enter this dungeon?", 3))
+game.splash(game.askForString("Will you go into this heist loud?", 3))
