@@ -1,1 +1,6 @@
-game.splash(game.askForString("Will you go into this heist loud?", 3))
+game.splash("Going in Stealth or Loud? A for stealth, B for loud")
+if (controller.A.isPressed()) {
+	
+} else {
+	
+}
