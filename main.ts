@@ -4,3 +4,5 @@ if (controller.A.isPressed()) {
 } else if (controller.B.isPressed()) {
     tiles.setCurrentTilemap(tilemap`level2`)
 }
+mp.setPlayerIndicatorsVisible(true)
+mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
