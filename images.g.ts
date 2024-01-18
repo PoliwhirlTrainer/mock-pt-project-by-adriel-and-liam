@@ -139,6 +139,25 @@ d e e e e f e f e e e e e e e .
 ...77666666666677...
 .......66..66.......
 `;
+            case "image7":
+            case "Jewlery_Box":return img`
+e e e e e e e e e e e e e e e e 
+e 5 5 f 5 5 f 5 5 f 5 5 f 5 5 e 
+e 7 7 7 7 7 7 7 7 7 7 7 7 7 7 e 
+e 5 5 f 5 5 f 5 5 f 5 5 f 5 5 e 
+e f f f f f f f f f f f f f f e 
+e 5 5 7 5 5 7 5 5 7 5 5 7 5 5 e 
+e f f f f f f f f f f f f f f e 
+e 9 1 f f 9 1 f f 9 1 f f 9 1 e 
+e 7 9 7 7 7 9 7 7 7 9 7 7 7 9 e 
+e f f f f f f f f f f f f f f e 
+e 9 f f f f f 9 f f f 9 f f f e 
+e 7 9 9 9 9 9 7 9 9 9 7 9 9 9 e 
+e f f f f f f f f f f f f f f e 
+e f 5 f f 5 f f 5 f f 5 f f 5 e 
+e 7 5 7 7 5 7 7 5 7 7 5 7 7 5 e 
+e e e e e e e e e e e e e e e e 
+`;
         }
         return null;
     })

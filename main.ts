@@ -2,7 +2,7 @@ namespace SpriteKind {
     export const Loot_Pickup_type = SpriteKind.create()
 }
 function Pickuploot (LootType: string, LootValue: number, OnLoot: boolean) {
-    Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type)]
+    Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
 }
 let Loot: Sprite[] = []
 game.splash("Press \"A\" for stealth, \"B\" for loud")
