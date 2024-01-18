@@ -2,7 +2,9 @@
     "name": "Mock PT project by Adriel and Liam",
     "description": "",
     "dependencies": {
-        "device": "*"
+        "device": "*",
+        "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
+        "multiplayer": "*"
     },
     "files": [
         "main.blocks",
