@@ -6,3 +6,6 @@ if (controller.A.isPressed()) {
 }
 mp.setPlayerIndicatorsVisible(true)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
+mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`Luxembourg`, SpriteKind.Player))
+mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))

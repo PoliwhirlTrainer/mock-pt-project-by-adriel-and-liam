@@ -4,7 +4,8 @@
     "dependencies": {
         "device": "*",
         "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.2",
-        "multiplayer": "*"
+        "multiplayer": "*",
+        "arcade-split-screen": "github:riknoll/arcade-split-screen#v0.0.3"
     },
     "files": [
         "main.blocks",
