@@ -1,16 +1,8 @@
 namespace SpriteKind {
     export const Loot_Pickup_type = SpriteKind.create()
 }
-function Pickuploot (LootType: string, LootValue: number, OnLoot: boolean) {
+function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
-    if (true) {
-    	
-    } else {
-    	
-    }
-    while (true) {
-    	
-    }
 }
 let PLayer2Health: StatusBarSprite = null
 let Player1Health: StatusBarSprite = null
