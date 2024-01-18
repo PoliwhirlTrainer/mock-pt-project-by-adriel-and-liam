@@ -3,7 +3,17 @@ namespace SpriteKind {
 }
 function Pickuploot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
+    if (true) {
+    	
+    } else {
+    	
+    }
+    while (true) {
+    	
+    }
 }
+let PLayer2Health: StatusBarSprite = null
+let Player1Health: StatusBarSprite = null
 let Loot: Sprite[] = []
 game.splash("Press \"A\" for stealth, \"B\" for loud")
 if (controller.A.isPressed()) {
@@ -22,3 +32,11 @@ splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Heister1)
 splitScreen.setCameraRegion(splitScreen.Camera.Camera1, splitScreen.CameraRegion.VerticalLeftHalf)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Heister2)
 splitScreen.setCameraRegion(splitScreen.Camera.Camera2, splitScreen.CameraRegion.VerticalRightHalf)
+forever(function () {
+    Player1Health = statusbars.create(20, 4, StatusBarKind.Health)
+    Player1Health.setColor(9, 2, 3)
+    Player1Health.attachToSprite(Heister1)
+    PLayer2Health = statusbars.create(20, 4, StatusBarKind.Health)
+    PLayer2Health.setColor(9, 2, 3)
+    PLayer2Health.attachToSprite(Heister2)
+})
