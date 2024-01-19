@@ -7,12 +7,7 @@ function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
 let PLayer2Health: StatusBarSprite = null
 let Player1Health: StatusBarSprite = null
 let Loot: Sprite[] = []
-game.splash("Press \"A\" for stealth, \"B\" for loud.")
-if (controller.A.isPressed()) {
-    tiles.setCurrentTilemap(tilemap`level1`)
-} else if (controller.B.isPressed()) {
-    tiles.setCurrentTilemap(tilemap`level2`)
-}
+tiles.setCurrentTilemap(tilemap`level1`)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 let Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
