@@ -1,7 +1,7 @@
 namespace SpriteKind {
     export const Loot_Pickup_type = SpriteKind.create()
 }
-function SpawnLoot(LootType: string, LootValue: number, OnLoot: boolean) {
+function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
 }
 let PLayer2Health: StatusBarSprite = null
@@ -27,4 +27,3 @@ forever(function () {
     PLayer2Health.setColor(9, 2, 3)
     PLayer2Health.attachToSprite(Heister2)
 })
-
