@@ -18,6 +18,7 @@ let Player1Health: StatusBarSprite = null
 let PLayer2Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
+scene.setBackgroundImage(assets.image`sky`)
 tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 let Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
