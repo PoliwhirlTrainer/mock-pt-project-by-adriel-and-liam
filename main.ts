@@ -21,7 +21,7 @@ let PLayer2Health: StatusBarSprite = null
 let Loot: Sprite[] = []
 let Heister2: Sprite = null
 let Heister1: Sprite = null
-tiles.loadMap(tiles.createMap(tilemap`Prototype_bank_entrance`))
+tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
