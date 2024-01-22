@@ -5,7 +5,7 @@ function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
 }
 controller.player2.onEvent(ControllerEvent.Connected, function () {
-    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`MEDIC`, SpriteKind.Player))
+    mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`Luxembourg`, SpriteKind.Player))
     Heister2 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two))
     tiles.placeOnTile(Heister2, tiles.getTileLocation(20, 36))
     mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))
