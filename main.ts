@@ -14,22 +14,24 @@ controller.player2.onEvent(ControllerEvent.Connected, function () {
     Heister2.setStayInScreen(true)
 })
 controller.player1.onEvent(ControllerEvent.Connected, function () {
-    controller.moveSprite(Heister1)
+	
 })
 let Player1Health: StatusBarSprite = null
 let PLayer2Health: StatusBarSprite = null
 let Loot: Sprite[] = []
 let Heister2: Sprite = null
-let Heister1: Sprite = null
 tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
-Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
+let Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
 tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
+controller.moveSprite(Heister1)
 Heister1.setStayInScreen(true)
 splitScreen.setSplitScreenEnabled(true)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Heister1)
+splitScreen.setCameraRegion(splitScreen.Camera.Camera1, splitScreen.CameraRegion.VerticalLeftHalf)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Heister2)
+splitScreen.setCameraRegion(splitScreen.Camera.Camera2, splitScreen.CameraRegion.VerticalRightHalf)
 forever(function () {
     Player1Health = statusbars.create(20, 4, StatusBarKind.Health)
     Player1Health.setColor(9, 2)
