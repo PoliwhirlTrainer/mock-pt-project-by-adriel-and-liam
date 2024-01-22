@@ -13,9 +13,6 @@ controller.player2.onEvent(ControllerEvent.Connected, function () {
     PLayer2Health.attachToSprite(Heister2)
     Heister2.setStayInScreen(true)
 })
-controller.player1.onEvent(ControllerEvent.Connected, function () {
-	
-})
 let Player1Health: StatusBarSprite = null
 let PLayer2Health: StatusBarSprite = null
 let Heister2: Sprite = null
@@ -26,7 +23,7 @@ let Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
 tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
 controller.moveSprite(Heister1)
-Heister1.setStayInScreen(true)
+scene.cameraFollowSprite(Heister1)
 forever(function () {
     Player1Health = statusbars.create(20, 4, StatusBarKind.Health)
     Player1Health.setColor(9, 2)
