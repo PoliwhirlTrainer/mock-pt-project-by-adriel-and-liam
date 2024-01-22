@@ -6,8 +6,9 @@ function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
 }
 controller.player2.onEvent(ControllerEvent.Connected, function () {
     mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`Luxembourg`, SpriteKind.Player))
-    controller.moveSprite(Heister2)
     Heister2 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two))
+    tiles.placeOnTile(Heister2, tiles.getTileLocation(20, 36))
+    mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))
     PLayer2Health = statusbars.create(20, 4, StatusBarKind.Health)
     PLayer2Health.setColor(9, 2)
     PLayer2Health.attachToSprite(Heister2)
