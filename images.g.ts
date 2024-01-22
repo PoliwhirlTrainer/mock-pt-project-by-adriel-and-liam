@@ -116,25 +116,6 @@ d e e e e f e f e e e e e e e .
 . . e e e e e e e e e e e . . . 
 5 5 . e e e e e e e e e 5 5 . 5 
 `;
-            case "image7":
-            case "Jewlery_Box":return img`
-e e e e e e e e e e e e e e e e 
-e 5 5 f 5 5 f 5 5 f 5 5 f 5 5 e 
-e 7 7 7 7 7 7 7 7 7 7 7 7 7 7 e 
-e 5 5 f 5 5 f 5 5 f 5 5 f 5 5 e 
-e f f f f f f f f f f f f f f e 
-e 5 5 7 5 5 7 5 5 7 5 5 7 5 5 e 
-e f f f f f f f f f f f f f f e 
-e 9 1 f f 9 1 f f 9 1 f f 9 1 e 
-e 7 9 7 7 7 9 7 7 7 9 7 7 7 9 e 
-e f f f f f f f f f f f f f f e 
-e 9 f f f f f 9 f f f 9 f f f e 
-e 7 9 9 9 9 9 7 9 9 9 7 9 9 9 e 
-e f f f f f f f f f f f f f f e 
-e f 5 f f 5 f f 5 f f 5 f f 5 e 
-e 7 5 7 7 5 7 7 5 7 7 5 7 7 5 e 
-e e e e e e e e e e e e e e e e 
-`;
             case "image8":
             case "sky":return img`
 9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999
@@ -295,6 +276,25 @@ e e e e e e e e e e e e e e e e
 . 2 1 2 2 2 2 2 2 1 2 . 
 . 2 1 2 1 1 2 1 2 1 2 . 
 . 2 b 2 1 2 2 1 2 b 2 . 
+`;
+            case "image7":
+            case "Jewlery_Box":return img`
+e e e e e e e e e e e e e e e e 
+e 5 5 f 5 5 f 5 5 f 5 5 f 5 5 e 
+e d d d d d d d d d d d d d d e 
+e 5 5 f 5 5 f 5 5 f 5 5 f 5 5 e 
+e f f f f f f f f f f f f f f e 
+e 5 5 d 5 5 d 5 5 d 5 5 d 5 5 e 
+e f f f f f f f f f f f f f f e 
+e 9 1 f f 9 1 f f 9 1 f f 9 1 e 
+e d 9 d d d 9 d d d 9 d d d 9 e 
+e f f f f f f f f f f f f f f e 
+e 9 f f f f f 9 f f f 9 f f f e 
+e d 9 9 9 9 9 d 9 9 9 d 9 9 9 e 
+e f f f f f f f f f f f f f f e 
+e f 5 f f 5 f f 5 f f 5 f f 5 e 
+e d 5 d d 5 d d 5 d d 5 d d 5 e 
+e e e e e e e e e e e e e e e e 
 `;
         }
         return null;
