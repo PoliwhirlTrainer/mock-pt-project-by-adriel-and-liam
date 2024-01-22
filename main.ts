@@ -29,7 +29,7 @@ tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
 Heister1.setStayInScreen(true)
 splitScreen.setSplitScreenEnabled(true)
 splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Heister1)
-splitScreen.cameraFollowSprite(splitScreen.Camera.Camera1, Heister2)
+splitScreen.cameraFollowSprite(splitScreen.Camera.Camera2, Heister2)
 forever(function () {
     Player1Health = statusbars.create(20, 4, StatusBarKind.Health)
     Player1Health.setColor(9, 2)
