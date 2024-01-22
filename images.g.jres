@@ -39,6 +39,11 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "MEDIC"
     },
+    "image9": {
+        "data": "hwQMAAwAAAAAAAAAAAAAAAAiIiIiIgAA/xsRERGxAAAPIiIiIiIAAA8iIhEiEQAADyISESESAAAPIhIRISIAAA8iIhEiEQAADyIiIiIiAAD/GxEREbEAAAAiIiIiIgAAAAAAAAAAAAA=",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Medic_Bag"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
