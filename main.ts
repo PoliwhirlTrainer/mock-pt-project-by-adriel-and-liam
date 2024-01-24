@@ -34,17 +34,16 @@ controller.player2.onEvent(ControllerEvent.Connected, function () {
 let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
-let Heister1: Sprite = null
 let currentmap = 0
 scene.setBackgroundImage(assets.image`sky`)
 levels(currentmap)
 currentmap = 0
-tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
-Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
+let Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
 controller.moveSprite(Heister1)
 scene.cameraFollowSprite(Heister1)
+tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
 forever(function () {
     Player1Health = statusbars.create(20, 4, StatusBarKind.Health)
     Player1Health.setColor(9, 2)
