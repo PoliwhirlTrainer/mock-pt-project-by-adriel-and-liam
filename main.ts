@@ -18,11 +18,11 @@ function levels (maps: number) {
     } else if (currentmap == 2) {
         tiles.setCurrentTilemap(tilemap`ATM`)
     } else if (maps == 3) {
-    	
+        tiles.setCurrentTilemap(tilemap`vault_entrance`)
     } else if (maps == 4) {
-    	
+        tiles.setCurrentTilemap(tilemap`level38`)
     } else if (maps == 5) {
-    	
+        tiles.setCurrentTilemap(tilemap`level39`)
     }
 }
 controller.player2.onEvent(ControllerEvent.Connected, function () {
