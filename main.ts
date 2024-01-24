@@ -16,7 +16,7 @@ function levels (maps: number) {
     } else if (currentmap == 1) {
         tiles.setCurrentTilemap(tilemap`bank_main_area`)
     } else if (currentmap == 2) {
-    	
+        tiles.setCurrentTilemap(tilemap`ATM`)
     } else if (maps == 3) {
     	
     } else if (maps == 4) {
