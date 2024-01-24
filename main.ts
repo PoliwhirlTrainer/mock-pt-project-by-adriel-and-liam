@@ -14,15 +14,15 @@ function levels (maps: number) {
     if (currentmap == 0) {
         tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
     } else if (currentmap == 1) {
-        tiles.setCurrentTilemap(tilemap`level23`)
+        tiles.setCurrentTilemap(tilemap`bank_main_area`)
     } else if (currentmap == 2) {
-        tiles.setCurrentTilemap(tilemap`level23`)
+    	
     } else if (maps == 3) {
-        tiles.setCurrentTilemap(tilemap`level23`)
+    	
     } else if (maps == 4) {
-        tiles.setCurrentTilemap(tilemap`level23`)
+    	
     } else if (maps == 5) {
-        tiles.setCurrentTilemap(tilemap`level23`)
+    	
     }
 }
 controller.player2.onEvent(ControllerEvent.Connected, function () {
