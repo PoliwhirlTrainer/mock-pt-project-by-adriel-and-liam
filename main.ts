@@ -4,6 +4,12 @@ namespace SpriteKind {
 function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, location) {
+	
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
+	
+})
 controller.player2.onEvent(ControllerEvent.Connected, function () {
     mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`Medic`, SpriteKind.Player))
     Heister2 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two))
