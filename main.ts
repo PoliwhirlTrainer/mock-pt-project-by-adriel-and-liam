@@ -36,8 +36,10 @@ let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
 let Heister1: Sprite = null
-scene.setBackgroundImage(assets.image`sky`)
 let currentmap = 0
+scene.setBackgroundImage(assets.image`sky`)
+levels(currentmap)
+currentmap = 0
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
