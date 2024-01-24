@@ -11,18 +11,18 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, l
     currentmap += 1
 })
 function levels (maps: number) {
-    if (maps == 0) {
+    if (currentmap == 0) {
         tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
-    } else if (maps == 1) {
+    } else if (currentmap == 1) {
         tiles.setCurrentTilemap(tilemap`level23`)
-    } else if (maps == 2) {
-    	
+    } else if (currentmap == 2) {
+        tiles.setCurrentTilemap(tilemap`level23`)
     } else if (maps == 3) {
-    	
+        tiles.setCurrentTilemap(tilemap`level23`)
     } else if (maps == 4) {
-    	
+        tiles.setCurrentTilemap(tilemap`level23`)
     } else if (maps == 5) {
-    	
+        tiles.setCurrentTilemap(tilemap`level23`)
     }
 }
 controller.player2.onEvent(ControllerEvent.Connected, function () {
@@ -37,13 +37,13 @@ let Loot: Sprite[] = []
 let currentmap = 0
 scene.setBackgroundImage(assets.image`sky`)
 levels(currentmap)
-currentmap = 0
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 let Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
 controller.moveSprite(Heister1)
 scene.cameraFollowSprite(Heister1)
 tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
+currentmap = 0
 forever(function () {
     Player1Health = statusbars.create(20, 4, StatusBarKind.Health)
     Player1Health.setColor(9, 2)
