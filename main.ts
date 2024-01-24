@@ -13,7 +13,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, l
 function levels (maps: number) {
     if (maps == 0) {
         tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
-        tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
     } else if (maps == 1) {
     	
     } else if (maps == 2) {
@@ -40,6 +39,7 @@ let currentmap = 0
 scene.setBackgroundImage(assets.image`sky`)
 levels(currentmap)
 currentmap = 0
+tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
