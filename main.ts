@@ -1,6 +1,9 @@
 namespace SpriteKind {
     export const Loot_Pickup_type = SpriteKind.create()
 }
+function initialmap (map: any[]) {
+	
+}
 function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
 }
@@ -31,6 +34,10 @@ controller.player2.onEvent(ControllerEvent.Connected, function () {
     tiles.placeOnTile(Heister2, tiles.getTileLocation(20, 36))
     mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))
 })
+function nextmap () {
+    let mapcount = 0
+    return currentmap != mapcount
+}
 let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let Loot: Sprite[] = []

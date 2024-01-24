@@ -187,12 +187,6 @@
         "tilemapTile": true,
         "displayName": "myTile21"
     },
-    "tile32": {
-        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-        "mimeType": "image/x-mkcd-f4",
-        "tilemapTile": true,
-        "displayName": "myTile22"
-    },
     "tile39": {
         "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
         "mimeType": "image/x-mkcd-f4",
@@ -258,6 +252,12 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true,
         "displayName": "red_carpet"
+    },
+    "tile32": {
+        "data": "hwQQABAAAAAAAAAAAAAAAIgRiCIhEQHuGBER8hERAe4YGIH/EREB7hgYEfIhEgHhiIiIIhEi8RERIhEiESLR/xEiESIRItH/ESIRIhEi8RERIhHyIRIB4REiEf8REQHuESIR8hERAe4RIhEiIREB7gAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "myTile22"
     },
     "level1": {
         "id": "level1",
