@@ -13,6 +13,7 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, l
 function levels (maps: number) {
     if (maps == 0) {
         tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
+        tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
     } else if (maps == 1) {
     	
     } else if (maps == 2) {
@@ -34,12 +35,12 @@ controller.player2.onEvent(ControllerEvent.Connected, function () {
 let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
+let Heister1: Sprite = null
 scene.setBackgroundImage(assets.image`sky`)
 let currentmap = 0
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
-let Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
+Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
-tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
 controller.moveSprite(Heister1)
 scene.cameraFollowSprite(Heister1)
 forever(function () {
