@@ -47,7 +47,6 @@ levels(currentmap)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 let Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
-controller.moveSprite(Heister1)
 scene.cameraFollowSprite(Heister1)
 tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
 currentmap = 0
