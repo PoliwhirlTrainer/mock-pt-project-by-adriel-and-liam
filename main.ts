@@ -14,7 +14,7 @@ function levels (maps: number) {
     if (maps == 0) {
         tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
     } else if (maps == 1) {
-    	
+        tiles.setCurrentTilemap(tilemap`level23`)
     } else if (maps == 2) {
     	
     } else if (maps == 3) {
