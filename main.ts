@@ -6,6 +6,9 @@ function initialmap (map: any[]) {
 }
 function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
+    for (let index = 0; index < 6; index++) {
+        tiles.placeOnRandomTile(Loot._pickRandom(), sprites.dungeon.chestOpen)
+    }
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, location) {
     currentmap += 1
@@ -23,7 +26,7 @@ function levels (maps: number) {
     } else if (maps == 3) {
         tiles.setCurrentTilemap(tilemap`vault_entrance`)
     } else if (maps == 4) {
-        tiles.setCurrentTilemap(tilemap`level38`)
+        tiles.setCurrentTilemap(tilemap`vault_interior`)
     } else if (maps == 5) {
         tiles.setCurrentTilemap(tilemap`level39`)
     }
@@ -38,6 +41,9 @@ function nextmap () {
     let mapcount = 0
     return currentmap != mapcount
 }
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (sprite, location) {
+    game.gameOver(true)
+})
 let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
@@ -47,7 +53,6 @@ levels(currentmap)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 let Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
-controller.moveSprite(Heister1)
 scene.cameraFollowSprite(Heister1)
 tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
 currentmap = 0
