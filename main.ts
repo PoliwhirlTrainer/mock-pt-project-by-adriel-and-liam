@@ -23,7 +23,7 @@ function levels (maps: number) {
     } else if (maps == 3) {
         tiles.setCurrentTilemap(tilemap`vault_entrance`)
     } else if (maps == 4) {
-        tiles.setCurrentTilemap(tilemap`level38`)
+        tiles.setCurrentTilemap(tilemap`vault_interior`)
     } else if (maps == 5) {
         tiles.setCurrentTilemap(tilemap`level39`)
     }
@@ -38,6 +38,9 @@ function nextmap () {
     let mapcount = 0
     return currentmap != mapcount
 }
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (sprite, location) {
+    game.gameOver(true)
+})
 let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
