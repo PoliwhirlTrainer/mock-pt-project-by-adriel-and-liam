@@ -2,7 +2,7 @@ namespace SpriteKind {
     export const Loot_Pickup_type = SpriteKind.create()
 }
 function initialmap (map: any[]) {
-	
+    mySprite = tiles.getTilesByType(assets.tile`transparency16`)[0]
 }
 function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
@@ -47,6 +47,7 @@ scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (spr
 let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
+let mySprite: tiles.Location = null
 let currentmap = 0
 scene.setBackgroundImage(assets.image`sky`)
 levels(currentmap)
