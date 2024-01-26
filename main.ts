@@ -28,7 +28,7 @@ function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     }
 }
 scene.onOverlapTile(SpriteKind.Player, assets.tile`endofmainarea`, function (sprite, location) {
-    currentmap += 2
+    currentmap += 1
     if (nextmap()) {
         Levels(currentmap)
     }
@@ -40,6 +40,12 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, 
     }
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
+    currentmap += 1
+    if (nextmap()) {
+        Levels(currentmap)
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile31`, function (sprite, location) {
     currentmap += 1
     if (nextmap()) {
         Levels(currentmap)
@@ -58,6 +64,18 @@ function nextmap () {
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (sprite, location) {
     game.gameOver(true)
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile30`, function (sprite, location) {
+    currentmap += 1
+    if (nextmap()) {
+        Levels(currentmap)
+    }
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile28`, function (sprite, location) {
+    currentmap += 1
+    if (nextmap()) {
+        Levels(currentmap)
+    }
+})
 let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
@@ -69,7 +87,7 @@ currentmap = 0
 Levels(currentmap)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
-mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.One))
+controller.moveSprite(Heister1)
 scene.cameraFollowSprite(Heister1)
 tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
 forever(function () {
