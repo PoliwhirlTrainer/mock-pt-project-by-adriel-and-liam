@@ -44,6 +44,16 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "sky"
     },
+    "image10": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADYAAAAiN0NAIgNAACI3d2ACAAAgNj93YiIiPiA1R39iIiI+FDV3d2IiAgAgNUd3ViIiPiA2P3diIiI+ACI3d2ACAAAAIjdDYAAAAAAAADw3QAAAADw////AAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "myImage"
+    },
+    "image11": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANAAAAAAAAAA3Q0AAAAAACD//wIAAAAAHd/90Q0AANAfDdDx3Q0A/R8NAPL/3dD9LQAA0P3f0t8NAAAA3f/x3wAAAAAA3dHdAAAAAADQ0g0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "Boomerang"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",

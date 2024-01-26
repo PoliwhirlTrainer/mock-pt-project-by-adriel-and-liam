@@ -6,12 +6,15 @@ function Levels (Currentmap: number) {
         tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
     } else if (Currentmap == 1) {
         tiles.setCurrentTilemap(tilemap`bank_main_area`)
+        tiles.placeOnTile(Heister1, tiles.getTileLocation(14, 29))
     } else if (Currentmap == 2) {
         tiles.setCurrentTilemap(tilemap`ATM`)
+        tiles.placeOnTile(Heister1, tiles.getTileLocation(9, 20))
     } else if (Currentmap == 3) {
         tiles.setCurrentTilemap(tilemap`vault_entrance`)
+        tiles.placeOnTile(Heister1, tiles.getTileLocation(0, 7))
     } else if (Currentmap == 4) {
-        tiles.setCurrentTilemap(tilemap`vault_interior`)
+        tiles.setCurrentTilemap(tilemap`level5`)
     } else if (Currentmap == 5) {
         tiles.setCurrentTilemap(tilemap`level39`)
     }
@@ -21,6 +24,9 @@ function initialmap (map: any[]) {
     tiles.placeOnTile(Heister1, playerstartlocation)
     tiles.setTileAt(playerstartlocation, assets.tile`transparency16`)
 }
+controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
+    Boomerang = sprites.create(assets.image`Boomerang`, SpriteKind.Projectile)
+})
 function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
     for (let index = 0; index < 10; index++) {
@@ -39,6 +45,16 @@ scene.onOverlapTile(SpriteKind.Player, sprites.builtin.forestTiles10, function (
         Levels(currentmap)
     }
 })
+scene.onOverlapTile(SpriteKind.Player, assets.tile`vent`, function (sprite, location) {
+    currentmap += 1
+    if (nextmap()) {
+        Levels(currentmap)
+    }
+})
+function poliice (Police: any[]) {
+    myEnemy = sprites.create(assets.image`myImage`, SpriteKind.Enemy)
+    myEnemy.follow(Heister1)
+}
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, location) {
     currentmap += 1
     if (nextmap()) {
@@ -67,9 +83,6 @@ function nextmap () {
     let mapcount = 0
     return currentmap != mapcount
 }
-scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.floorDark2, function (sprite, location) {
-    game.gameOver(true)
-})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile30`, function (sprite, location) {
     currentmap += 1
     if (nextmap()) {
@@ -84,7 +97,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile28`, function (sprite, 
 })
 let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
+let myEnemy: Sprite = null
 let Loot: Sprite[] = []
+let Boomerang: Sprite = null
 let playerstartlocation: tiles.Location = null
 let Heister1: Sprite = null
 let currentmap = 0
