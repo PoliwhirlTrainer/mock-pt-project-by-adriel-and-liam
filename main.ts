@@ -23,7 +23,7 @@ function initialmap (map: any[]) {
 }
 function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
-    for (let index = 0; index < 6; index++) {
+    for (let index = 0; index < 10; index++) {
         tiles.placeOnRandomTile(Loot._pickRandom(), assets.tile`myTile33`)
     }
 }
