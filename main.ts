@@ -4,6 +4,7 @@ namespace SpriteKind {
 function Levels (Currentmap: number) {
     if (Currentmap == 0) {
         tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
+        tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
     } else if (Currentmap == 1) {
         tiles.setCurrentTilemap(tilemap`bank_main_area`)
         tiles.placeOnTile(Heister1, tiles.getTileLocation(14, 29))
@@ -15,8 +16,13 @@ function Levels (Currentmap: number) {
         tiles.placeOnTile(Heister1, tiles.getTileLocation(0, 7))
     } else if (Currentmap == 4) {
         tiles.setCurrentTilemap(tilemap`level5`)
+        tiles.placeOnTile(Heister1, tiles.getTileLocation(0, 9))
     } else if (Currentmap == 5) {
         tiles.setCurrentTilemap(tilemap`level39`)
+        tiles.placeOnTile(Heister1, tiles.getTileLocation(0, 12))
+    } else if (Currentmap == 6) {
+        tiles.setCurrentTilemap(tilemap`level54`)
+        tiles.placeOnTile(Heister1, tiles.getTileLocation(2, 8))
     }
 }
 function initialmap (map: any[]) {
@@ -26,6 +32,7 @@ function initialmap (map: any[]) {
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     Boomerang = sprites.create(assets.image`Boomerang`, SpriteKind.Projectile)
+    Boomerang = sprites.createProjectileFromSprite(assets.image`Boomerang`, Heister1, 50, 50)
 })
 function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
@@ -33,6 +40,12 @@ function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
         tiles.placeOnRandomTile(Loot._pickRandom(), assets.tile`myTile33`)
     }
 }
+scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
+    currentmap += 1
+    if (nextmap()) {
+        Levels(currentmap)
+    }
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`endofmainarea`, function (sprite, location) {
     currentmap += 1
     if (nextmap()) {
@@ -54,12 +67,22 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`vent`, function (sprite, loca
 function poliice (Police: any[]) {
     myEnemy = sprites.create(assets.image`myImage`, SpriteKind.Enemy)
     myEnemy.follow(Heister1)
+    if (myEnemy.overlapsWith(Heister1)) {
+        Player1Health.value += 20
+    }
 }
+statusbars.onZero(StatusBarKind.Health, function (status) {
+    game.splash("Game Over")
+    game.gameOver(false)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile16`, function (sprite, location) {
     currentmap += 1
     if (nextmap()) {
         Levels(currentmap)
     }
+})
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile36`, function (sprite, location) {
+    game.gameOver(true)
 })
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, location) {
     currentmap += 1
@@ -83,6 +106,9 @@ function nextmap () {
     let mapcount = 0
     return currentmap != mapcount
 }
+scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile35`, function (sprite, location) {
+    game.gameOver(true)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile30`, function (sprite, location) {
     currentmap += 1
     if (nextmap()) {
@@ -95,24 +121,22 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile28`, function (sprite, 
         Levels(currentmap)
     }
 })
-let Player1Health: StatusBarSprite = null
 let Heister2: Sprite = null
 let myEnemy: Sprite = null
 let Loot: Sprite[] = []
 let Boomerang: Sprite = null
 let playerstartlocation: tiles.Location = null
+let Player1Health: StatusBarSprite = null
 let Heister1: Sprite = null
 let currentmap = 0
 scene.setBackgroundImage(assets.image`sky`)
 currentmap = 0
-Levels(currentmap)
 mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.One), sprites.create(assets.image`Austin`, SpriteKind.Player))
 Heister1 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.One))
 controller.moveSprite(Heister1)
 scene.cameraFollowSprite(Heister1)
-tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
-forever(function () {
-    Player1Health = statusbars.create(20, 4, StatusBarKind.Health)
-    Player1Health.setColor(9, 2)
-    Player1Health.attachToSprite(Heister1)
-})
+Levels(currentmap)
+Player1Health = statusbars.create(20, 4, StatusBarKind.Health)
+Player1Health.setColor(4, 2)
+Player1Health.attachToSprite(Heister1)
+Player1Health.setLabel("HP")
