@@ -71,9 +71,6 @@ function poliice (Police: any[]) {
     myEnemy = sprites.create(assets.image`myImage`, SpriteKind.Enemy)
     myEnemy.setVelocity(10, 15)
     myEnemy.follow(Heister1)
-    if (Heister1.overlapsWith(myEnemy)) {
-        Player1Health.value += -20
-    }
     if (tiles.tileAtLocationEquals(tiles.getTileLocation(7, 13), assets.tile`rope_tile`)) {
         for (let index = 0; index < 5; index++) {
             tiles.placeOnRandomTile(myEnemy, assets.tile`rope_tile`)
@@ -136,6 +133,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile28`, function (sprite, 
     if (nextmap()) {
         Levels(currentmap)
     }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    Player1Health.value += -20
 })
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
