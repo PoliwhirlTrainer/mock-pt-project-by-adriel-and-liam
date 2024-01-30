@@ -6,8 +6,10 @@ function Levels (Currentmap: number) {
         tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
         tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
     } else if (Currentmap == 1) {
+        let list: number[] = []
         tiles.setCurrentTilemap(tilemap`bank_main_area`)
         tiles.placeOnTile(Heister1, tiles.getTileLocation(14, 29))
+        poliice(list)
     } else if (Currentmap == 2) {
         tiles.setCurrentTilemap(tilemap`ATM`)
         tiles.placeOnTile(Heister1, tiles.getTileLocation(9, 20))
@@ -67,9 +69,19 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`vent`, function (sprite, loca
 })
 function poliice (Police: any[]) {
     myEnemy = sprites.create(assets.image`myImage`, SpriteKind.Enemy)
+    myEnemy.setVelocity(10, 15)
     myEnemy.follow(Heister1)
     if (myEnemy.overlapsWith(Heister1)) {
         Player1Health.value += -20
+    }
+    if (tiles.tileAtLocationEquals(tiles.getTileLocation(7, 13), assets.tile`rope_tile`)) {
+        for (let index = 0; index < 5; index++) {
+            tiles.placeOnRandomTile(myEnemy, assets.tile`rope_tile`)
+        }
+    } else if (tiles.tileAtLocationEquals(tiles.getTileLocation(24, 16), assets.tile`rope_tile`)) {
+        for (let index = 0; index < 5; index++) {
+            tiles.placeOnRandomTile(myEnemy, assets.tile`rope_tile`)
+        }
     }
 }
 statusbars.onZero(StatusBarKind.Health, function (status) {
