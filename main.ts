@@ -119,6 +119,9 @@ function nextmap () {
     let mapcount = 0
     return currentmap != mapcount
 }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    Player1Health.value += 2
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile35`, function (sprite, location) {
     game.gameOver(true)
 })
