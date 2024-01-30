@@ -119,6 +119,10 @@ function nextmap () {
     let mapcount = 0
     return currentmap != mapcount
 }
+sprites.onOverlap(SpriteKind.Projectile, SpriteKind.Enemy, function (sprite, otherSprite) {
+    sprites.destroy(myEnemy, effects.spray, 100)
+    sprites.destroy(Boomerang, effects.none, 100)
+})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile35`, function (sprite, location) {
     game.gameOver(true)
 })
