@@ -103,9 +103,6 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile2`, function (sprite, l
         Levels(currentmap)
     }
 })
-sprites.onOverlap(SpriteKind.Player, SpriteKind.Player, function (sprite, otherSprite) {
-    Player1Health.value += 2
-})
 scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile31`, function (sprite, location) {
     currentmap += 1
     if (nextmap()) {
@@ -136,6 +133,9 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile28`, function (sprite, 
     if (nextmap()) {
         Levels(currentmap)
     }
+})
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSprite) {
+    Player1Health.value += 2
 })
 let Heister2: Sprite = null
 let Loot: Sprite[] = []
