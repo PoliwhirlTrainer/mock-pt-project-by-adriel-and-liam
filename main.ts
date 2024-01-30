@@ -33,6 +33,7 @@ function initialmap (map: any[]) {
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     Boomerang = sprites.create(assets.image`Boomerang`, SpriteKind.Projectile)
     Boomerang = sprites.createProjectileFromSprite(assets.image`Boomerang`, Heister1, 50, 50)
+    Boomerang.follow(myEnemy, 100)
 })
 function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
     Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
@@ -68,7 +69,7 @@ function poliice (Police: any[]) {
     myEnemy = sprites.create(assets.image`myImage`, SpriteKind.Enemy)
     myEnemy.follow(Heister1)
     if (myEnemy.overlapsWith(Heister1)) {
-        Player1Health.value += 20
+        Player1Health.value += -20
     }
 }
 statusbars.onZero(StatusBarKind.Health, function (status) {
@@ -122,8 +123,8 @@ scene.onOverlapTile(SpriteKind.Player, assets.tile`myTile28`, function (sprite, 
     }
 })
 let Heister2: Sprite = null
-let myEnemy: Sprite = null
 let Loot: Sprite[] = []
+let myEnemy: Sprite = null
 let Boomerang: Sprite = null
 let playerstartlocation: tiles.Location = null
 let Player1Health: StatusBarSprite = null
