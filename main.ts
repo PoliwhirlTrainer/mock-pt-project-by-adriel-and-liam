@@ -113,6 +113,10 @@ controller.player2.onEvent(ControllerEvent.Connected, function () {
     tiles.placeOnTile(Heister2, tiles.getTileLocation(20, 36))
     mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two))
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.Loot_Pickup_type, function (sprite, otherSprite) {
+    info.setScore(0)
+    info.changeScoreBy(100)
+})
 function nextmap () {
     let mapcount = 0
     return currentmap != mapcount
