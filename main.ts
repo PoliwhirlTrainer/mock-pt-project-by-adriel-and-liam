@@ -19,6 +19,10 @@ function Levels (Currentmap: number) {
     } else if (Currentmap == 4) {
         tiles.setCurrentTilemap(tilemap`level5`)
         tiles.placeOnTile(Heister1, tiles.getTileLocation(0, 9))
+        Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
+        for (let index = 0; index < 10; index++) {
+            tiles.placeOnRandomTile(Loot._pickRandom(), assets.tile`myTile33`)
+        }
     } else if (Currentmap == 5) {
         tiles.setCurrentTilemap(tilemap`level39`)
         tiles.placeOnTile(Heister1, tiles.getTileLocation(0, 12))
@@ -37,12 +41,6 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     Boomerang = sprites.createProjectileFromSprite(assets.image`Boomerang`, Heister1, 50, 50)
     Boomerang.follow(myEnemy, 100)
 })
-function SpawnLoot (LootType: string, LootValue: number, OnLoot: boolean) {
-    Loot = [sprites.create(assets.image`Money_Bag`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Bag_of_GOLD`, SpriteKind.Loot_Pickup_type), sprites.create(assets.image`Jewlery_Box`, SpriteKind.Loot_Pickup_type)]
-    for (let index = 0; index < 10; index++) {
-        tiles.placeOnRandomTile(Loot._pickRandom(), assets.tile`myTile33`)
-    }
-}
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
     currentmap += 1
     if (nextmap()) {
@@ -142,10 +140,10 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.Enemy, function (sprite, otherSp
     Player1Health.value += -5
 })
 let Heister2: Sprite = null
-let Loot: Sprite[] = []
 let myEnemy: Sprite = null
 let Boomerang: Sprite = null
 let playerstartlocation: tiles.Location = null
+let Loot: Sprite[] = []
 let Player1Health: StatusBarSprite = null
 let Heister1: Sprite = null
 let currentmap = 0
