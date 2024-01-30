@@ -153,6 +153,7 @@ controller.moveSprite(Heister1)
 scene.cameraFollowSprite(Heister1)
 Levels(currentmap)
 Player1Health = statusbars.create(20, 4, StatusBarKind.Health)
+Player1Health.value = 150
 Player1Health.setColor(4, 2)
 Player1Health.attachToSprite(Heister1)
 Player1Health.setLabel("HP")
