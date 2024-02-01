@@ -54,7 +54,7 @@ function initialmap (map: any[]) {
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     Boomerang = sprites.create(assets.image`Boomerang`, SpriteKind.Projectile)
     Boomerang = sprites.createProjectileFromSprite(assets.image`Boomerang`, Heister1, 50, 50)
-    Boomerang.follow(myEnemy, 100)
+    Boomerang.follow(myEnemy, 200)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
     currentmap += 1
