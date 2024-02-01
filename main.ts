@@ -54,7 +54,7 @@ function initialmap (map: any[]) {
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     Boomerang = sprites.create(assets.image`Boomerang`, SpriteKind.Projectile)
     Boomerang = sprites.createProjectileFromSprite(assets.image`Boomerang`, Heister1, 50, 50)
-    Boomerang.follow(myEnemy, 200)
+    Boomerang.follow(myEnemy, 100)
 })
 scene.onOverlapTile(SpriteKind.Player, sprites.dungeon.stairWest, function (sprite, location) {
     currentmap += 1
@@ -88,11 +88,13 @@ function poliice (Police: any[]) {
         for (let index = 0; index < 5; index++) {
             tiles.placeOnRandomTile(myEnemy, assets.tile`rope_tile`)
             pause(100)
+            tiles.placeOnRandomTile(myEnemy, assets.tile`rope_tile`)
         }
     } else if (tiles.tileAtLocationEquals(tiles.getTileLocation(24, 16), assets.tile`rope_tile`)) {
         for (let index = 0; index < 5; index++) {
             tiles.placeOnRandomTile(myEnemy, assets.tile`rope_tile`)
             pause(100)
+            tiles.placeOnRandomTile(myEnemy, assets.tile`rope_tile`)
         }
     }
 }
@@ -128,6 +130,7 @@ controller.player2.onEvent(ControllerEvent.Connected, function () {
     mp.setPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two), sprites.create(assets.image`Medic`, SpriteKind.Player))
     Heister2 = mp.getPlayerSprite(mp.playerSelector(mp.PlayerNumber.Two))
     tiles.placeOnTile(Heister2, tiles.getTileLocation(20, 36))
+    Heister2.setStayInScreen(true)
     mp.moveWithButtons(mp.playerSelector(mp.PlayerNumber.Two), 110, 110)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Loot_Pickup_type, function (sprite, otherSprite) {
