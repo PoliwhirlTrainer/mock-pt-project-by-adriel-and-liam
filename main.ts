@@ -7,6 +7,7 @@ function Levels (Currentmap: number) {
         tiles.setCurrentTilemap(tilemap`Prototype_bank_entrance`)
         tiles.placeOnTile(Heister1, tiles.getTileLocation(20, 36))
         tiles.placeOnTile(Heister2, tiles.getTileLocation(20, 36))
+        sprites.destroyAllSpritesOfKind(SpriteKind.Projectile)
     } else if (Currentmap == 1) {
         tiles.setCurrentTilemap(tilemap`bank_main_area`)
         tiles.placeOnTile(Heister1, tiles.getTileLocation(14, 29))
